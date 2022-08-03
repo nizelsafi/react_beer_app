@@ -7,13 +7,12 @@ import ListSubheader from '@mui/material/ListSubheader';
 const BeerCart = (/*beersData*/) => {
 
     return (
-    <ImageList sx={{ width: 500, height: 450 }}>
+    <ImageList sx={{ width: 500 }}>
         <ImageListItem key="Subheader" cols={2}>
             <ListSubheader component="div">BeerCart</ListSubheader>
         </ImageListItem>
         {beersData.map((beer) => (
-            //console.log(beer)
-            <BeerItem key={beer.id} beerInfos={beer} />
+            <BeerItem key ={beer.id} beerInfos={beer} />
         ))}
     </ImageList>    
     );
