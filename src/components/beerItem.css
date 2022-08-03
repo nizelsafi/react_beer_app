@@ -1,0 +1,8 @@
+.listItem.MuiImageListItem-root {
+    background-color: aliceblue;
+}
+
+img.imgItem.MuiImageListItem-img {
+    object-fit: contain;
+    height: 250px;
+}
