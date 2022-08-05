@@ -19,7 +19,7 @@ import { setBeersData, setSearchedBeers } from './store/actions';
 import { connect } from 'react-redux';
 import Pagination from './components/Pagination';
 import ShopList from './pages/ShopList';
-import Alert from './components/Alert';
+import AlertBar from './components/AlertBar';
 
 function App({ beersData, orderBeers, setBeersData, setSearchedBeers, alert }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -33,7 +33,7 @@ function App({ beersData, orderBeers, setBeersData, setSearchedBeers, alert }) {
     getBeersData(pageNum).then(beersData => {
       setBeersData(beersData);
     });
-  }, [pageNum]) 
+  }, [pageNum]); 
 
   const handleInput = event => {
     const inputValue = event.target.value.toLowerCase();
@@ -81,7 +81,7 @@ function App({ beersData, orderBeers, setBeersData, setSearchedBeers, alert }) {
               </div>
           </Route>
         </Switch>
-        {alert && <Alert alert={alert} />}
+        {alert && <AlertBar />}
       </div>
     </BrowserRouter>
   );
