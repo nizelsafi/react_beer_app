@@ -14,14 +14,14 @@ const BeerItem = ({ beer, orderBeers, orderBeer, setAlert }) => {
       let beers = [...orderBeers];
       beers.push(beer);
       orderBeer(beers);
-      setAlert({status: "success",message: "This beer is added to your shop!"});
+      setAlert({status: "success",message: `"${name}" beer is added to your shop!`});
     };
     const removeOrder = () => {
       let beers = [...orderBeers];
       const idx = beers.findIndex(value => value.id === beer.id );
       beers.splice(idx,1);
       orderBeer(beers);
-      setAlert({status: "warning",message: "This beer is removed from your shop!"});
+      setAlert({status: "warning",message: `"${name}" beer is removed from your shop!`});
     };
     const isOrdered = orderBeers && orderBeers.find(beer => {
       return beer.id == id ? true : false
