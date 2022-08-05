@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './BeerDetail.scss';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
-
-const BeerDetail = ({beersData}) => {
+const BeerDetail = ({ beersData, orderBeers }) => {
     const {id} = useParams();
     const selectedBeer = beersData && beersData.find(beer => beer.id == id);
+    const isOrdered = orderBeers && orderBeers.find(beer => {
+        return beer.id == selectedBeer.id ? true : false
+    });
 
     if(!selectedBeer) {
         return null;
@@ -15,6 +17,7 @@ const BeerDetail = ({beersData}) => {
     return (
         <div className="beer-page">
             <div className="beer-info">
+                {isOrdered && <div className='itemBar--top'>Ordered!</div>}
                 <img src={selectedBeer.image_url} className="beer-info__img" alt="" />
 
                 <div className="beer-info__column">
@@ -52,7 +55,8 @@ const BeerDetail = ({beersData}) => {
 const mapStateToProps = state => {
     console.log(state);
     return {
-        beersData: state.beersData
+        beersData: state.beersData,
+        orderBeers: state.orderBeers
     };
 };
 
