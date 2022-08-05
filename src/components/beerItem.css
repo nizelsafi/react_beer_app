@@ -24,3 +24,9 @@ button.MuiTypography-root.MuiTypography-inherit.MuiLink-root.MuiLink-underlineAl
 .MuiButton-root.secondary_button {
     color: orangered;
 }
+
+.imgItemBar--top.MuiImageListItemBar-root {
+    background-color: #FFD369;
+    height: 25px;
+    /*transform: rotate(50deg);*/
+}

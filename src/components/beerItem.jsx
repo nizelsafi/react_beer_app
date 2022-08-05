@@ -32,7 +32,7 @@ const BeerItem = ({ beer, orderBeers, orderBeer, setAlert }) => {
 
     useEffect(() => {
       setIsOrdered(ordered);
-    }, [orderBeers]) 
+    }, [orderBeers]);
 
     return (
       <Card variant="outlined" className='cardItem'>
@@ -47,11 +47,16 @@ const BeerItem = ({ beer, orderBeers, orderBeer, setAlert }) => {
               className='imgItem'
             />
             <ImageListItemBar
-              className='imgItemBar'
+              className='imgItemBar--below'
               title={name}
               subtitle={<span>Volume: {volume.value} {volume.unit}</span>}
               position="below"
             />
+            {isOrdered && <ImageListItemBar
+              className='imgItemBar--top'
+              title={"Ordered!"}
+              position="top"
+            />}
           </ImageListItem>
               
         </Link>
