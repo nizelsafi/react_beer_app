@@ -15,7 +15,7 @@ const Nav = ({ numOrderBeers }) => {
             </Link>
             <Link to="/shopList" className='icon'>
                 { numOrderBeers > 0 ? 
-                    <Badge badgeContent={numOrderBeers} color="success">
+                    <Badge badgeContent={numOrderBeers} className={"badge"} >
                         <LocalGroceryStoreOutlinedIcon />
                     </Badge> :
                     <LocalGroceryStoreOutlinedIcon />

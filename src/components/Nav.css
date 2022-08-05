@@ -20,3 +20,7 @@
 .nav .icon {
     margin-left: auto;
 }
+
+.nav .badge .MuiBadge-badge {
+    background-color: darkgoldenrod;
+}
