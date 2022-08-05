@@ -1,0 +1,22 @@
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    background-color: #222831;
+    color: rgb(245, 245, 245);
+    position: fixed;
+    top: 0%;
+    width: 100%;
+    z-index: 3;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    padding: 0 10px;
+}
+
+.nav .icon {
+    margin-left: auto;
+}
