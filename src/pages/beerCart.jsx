@@ -13,7 +13,7 @@ const BeerCart = ({ beersData, searchedBeers }) => {
     return ( 
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
             {filtredData.map((beer) => (
-                <Link to={`/beerList/${beer.id}`} key ={beer.id}>
+                <Link to={`/beerList/${beer.id}`} key ={beer.id} className={"link"}>
                     <ListItem alignItems="flex-start" key ={beer.id}>
                         <ListItemButton>
                             <ListItemAvatar>

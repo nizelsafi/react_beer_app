@@ -30,7 +30,7 @@ const BeerItem = ({ beer, orderBeers, orderBeer, setAlert }) => {
     return (
       <Card variant="outlined" className='cardItem'>
          <CardContent>
-        <Link to={`/beerList/${id}`} key={id}>
+        <Link to={`/beerList/${id}`} key={id} className={"link"}>
           <ImageListItem key={id} className='listItem'>
             <img
               src={`${image_url}?w=248&fit=crop&auto=format`}
