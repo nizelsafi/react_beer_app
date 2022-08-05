@@ -1,20 +1,23 @@
-import { Avatar, Divider, List, ListItem, ListItemAvatar, ListItemButton, ListItemText } from '@mui/material';
-import React, { useState, useEffect } from 'react';
+import { Avatar, List, ListItem, ListItemAvatar, ListItemButton, ListItemText } from '@mui/material';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from "react-router-dom";
 
 
-const ShopList = ({ orderBeers }) => {
-    //const data = searchedBeers ? searchedBeers : beersData;
+const ShopList = ({ orderBeers, searchedBeers }) => {
+    const matchedBeers = searchedBeers && orderBeers && searchedBeers.filter(obj => {
+        return orderBeers.indexOf(obj) !== -1;
+    });
+    const beersData = matchedBeers ? matchedBeers : orderBeers ;
 
-    if (orderBeers.length === 0) {
+    if (beersData.length === 0) {
         return <div>No ordered beers...</div>;
     }
 
     return ( 
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-            {orderBeers.map((beer) => (
-                <Link to={`/beerList/${beer.id}`} key ={beer.id}>
+            {beersData.map((beer) => (
+                <Link to={`/beerList/${beer.id}`} key ={beer.id} className={"link"} >
                     <ListItem alignItems="flex-start" key ={beer.id}>
                         <ListItemButton>
                             <ListItemAvatar>
@@ -27,15 +30,13 @@ const ShopList = ({ orderBeers }) => {
                     </ListItem>
                 </Link>
             )) }
-            
         </List> 
-          
     );
 };
 
 const mapStateToProps = state => {
     return {
-        beersData: state.beersData,
+        searchedBeers: state.searchedBeers,
         orderBeers: state.orderBeers
     };
 };

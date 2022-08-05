@@ -40,7 +40,7 @@ function App({ beersData, orderBeers, setBeersData, setSearchedBeers, alert }) {
     setSearchTerm(inputValue);
 
     const searchedBeers = beersData && beersData.filter(result => { 
-      if (searchTerm) {
+      if (searchTerm && searchTerm !== "") {
         return result.name.toLowerCase().includes(searchTerm);
       }
       
@@ -56,9 +56,7 @@ function App({ beersData, orderBeers, setBeersData, setSearchedBeers, alert }) {
         <Nav numOrderBeers={orderBeers.length} />
         <Switch> 
           <Route path="/beerList/:id" >
-              <div className='home'>
-                <BeerDetail />
-              </div>
+              <BeerDetail />
           </Route>
           <Route path="/beerList" >
               <Header />
@@ -70,17 +68,16 @@ function App({ beersData, orderBeers, setBeersData, setSearchedBeers, alert }) {
           </Route>
           <Route path="/shopList" >
               <Header />
+              <SearchBox handleInput={handleInput} searchTerm={searchTerm}/>
               {orderBeers && <ShopList />}
           </Route>
           <Route path="/" >
               <Header />
               <SearchBox handleInput={handleInput} searchTerm={searchTerm}/>
-              <div className='home'>
-                {beersData && <BeerCart />}
-                <Pagination
-                onPageChange={handlePageClick}
-                />
-              </div>
+              {beersData && <BeerCart />}
+              <Pagination
+              onPageChange={handlePageClick}
+              />
           </Route>
         </Switch>
         {alert && <AlertBar />}
@@ -94,7 +91,6 @@ const mapStateToProps = state => {
   return {
       beersData: state.beersData,
       orderBeers: state.orderBeers,
-      searchedBeers: state.searchedBeers,
       alert: state.alert
   };
 };
