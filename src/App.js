@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import getBeersData from './api/getBeersData';
 import './App.css';
-import BeerCart from './pages/beerCart';
+import BeerCart from './pages/BeerCart';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import BeerDetail from './pages/beerDetail';
-import BeerList from './pages/beerList';
+import BeerDetail from './pages/BeerDetail';
+import BeerList from './pages/BeerList';
 import Nav from './components/Nav';
 import Header from './components/Header';
 import SearchBox from './components/SearchBox';

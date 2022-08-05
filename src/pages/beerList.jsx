@@ -1,6 +1,6 @@
 import ImageList from '@mui/material/ImageList';
 import React from 'react';
-import BeerItem from '../components/beerItem';
+import BeerItem from '../components/BeerItem';
 import ImageListItem from '@mui/material/ImageListItem';
 import ListSubheader from '@mui/material/ListSubheader';
 import { connect } from 'react-redux';

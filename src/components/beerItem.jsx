@@ -10,7 +10,7 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import { Link } from 'react-router-dom';
 import { orderBeer, setAlert } from '../store/actions';
 
-import './beerItem.css';
+import './BeerItem.css';
 
 const BeerItem = ({ beer, orderBeers, orderBeer, setAlert }) => {
     const { id, image_url, name, volume } = beer;
