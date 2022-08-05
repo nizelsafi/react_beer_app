@@ -3,7 +3,6 @@ import './Pagination.css'
 import ReactPaginate from 'react-paginate';
 
 const Pagination = (props) => {
-
     const { onPageChange } = props
 
     return (
@@ -11,10 +10,13 @@ const Pagination = (props) => {
             breakLabel="..."
             nextLabel="next >"
             onPageChange={onPageChange}
-            pageRangeDisplayed={5}
             pageCount={13}
             previousLabel="< previous"
-            renderOnZeroPageCount={null}
+            containerClassName={"pagination"}
+            previousLinkClassName={"pagination__link"}
+            nextLinkClassName={"pagination__link"}
+            disabledClassName={"pagination__link--disabled"}
+            activeClassName={"pagination__link--active"}      
         />
     )
 }
