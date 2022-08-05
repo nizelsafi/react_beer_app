@@ -2,7 +2,8 @@ import { Avatar, Divider, List, ListItem, ListItemAvatar, ListItemButton, ListIt
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { selectBeer } from '../store/actions';
-import Link from '@mui/material/Link';
+import { Link } from "react-router-dom";
+
 
 const ShopList = ({ orderBeers }) => {
     //const data = searchedBeers ? searchedBeers : beersData;
@@ -14,7 +15,7 @@ const ShopList = ({ orderBeers }) => {
     return ( 
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
             {orderBeers.map((beer) => (
-                <Link href={`/beerList/${beer.id}`} key ={beer.id}>
+                <Link to={`/beerList/${beer.id}`} key ={beer.id}>
                     <ListItem alignItems="flex-start" key ={beer.id}>
                         <ListItemButton>
                             <ListItemAvatar>

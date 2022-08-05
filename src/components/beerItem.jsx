@@ -4,13 +4,12 @@ import ImageListItemBar from '@mui/material/ImageListItemBar';
 import './beerItem.css';
 import { connect } from 'react-redux';
 import { orderBeer, selectBeer, setAlert } from '../store/actions';
-import Link from '@mui/material/Link';
+import { Link } from "react-router-dom";
 import { Button, Card, CardActions, CardContent } from '@mui/material';
 
 
 const BeerItem = ({ beer, orderBeers, orderBeer, setAlert }) => {
     const { id, image_url, name, volume } = beer;
-    const [isOrdered, setIsOrdered] = useState(false);
     const handelOrder = () => {
       let beers = [...orderBeers];
       beers.push(beer);
@@ -24,20 +23,14 @@ const BeerItem = ({ beer, orderBeers, orderBeer, setAlert }) => {
       orderBeer(beers);
       setAlert({status: "warning",message: "This beer is removed from your shop!"});
     };
-    const ordered = () => {
-      let beers = [...orderBeers];
-      const beer = beers && beers.find(beer => beer.id == id);
-      return beer ? true : false;
-    }
-
-    useEffect(() => {
-      setIsOrdered(ordered);
-    }, [orderBeers]);
+    const isOrdered = orderBeers && orderBeers.find(beer => {
+      return beer.id == id ? true : false
+    });
 
     return (
       <Card variant="outlined" className='cardItem'>
          <CardContent>
-        <Link href={`/beerList/${id}`} key={id}>
+        <Link to={`/beerList/${id}`} key={id}>
           <ImageListItem key={id} className='listItem'>
             <img
               src={`${image_url}?w=248&fit=crop&auto=format`}
