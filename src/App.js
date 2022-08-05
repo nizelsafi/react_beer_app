@@ -81,7 +81,6 @@ function App({ beersData, orderBeers, setBeersData, setSearchedBeers, alert }) {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         beersData: state.beersData,
         orderBeers: state.orderBeers,
