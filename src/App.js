@@ -57,18 +57,20 @@ function App({ beersData, orderBeers, setBeersData, setSearchedBeers, alert }) {
                     <Route path="/beerList">
                         <Header />
                         <SearchBox handleInput={handleInput} searchTerm={searchTerm} />
-                        {beersData && <BeerList />}
+                        {beersData.length > 0 && <BeerList />}
                         <Pagination onPageChange={handlePageClick} />
                     </Route>
                     <Route path="/shopList">
                         <Header />
-                        <SearchBox handleInput={handleInput} searchTerm={searchTerm} />
-                        {orderBeers && <ShopList />}
+                        {orderBeers.length > 0 && (
+                            <SearchBox handleInput={handleInput} searchTerm={searchTerm} />
+                        )}
+                        <ShopList />
                     </Route>
                     <Route path="/">
                         <Header />
                         <SearchBox handleInput={handleInput} searchTerm={searchTerm} />
-                        {beersData && <BeerCart />}
+                        {beersData.length > 0 && <BeerCart />}
                         <Pagination onPageChange={handlePageClick} />
                     </Route>
                 </Switch>
