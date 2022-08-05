@@ -10,7 +10,7 @@ const AlertBar = ({alert, setAlert}) => {
     useEffect(() => {
         setTimeout(() => {
             setAlert(null);
-        }, 1500);
+        }, 2000);
     }, []);
 
     return (<Alert className='alertBar' severity={status}>{message}</Alert>)
