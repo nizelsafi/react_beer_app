@@ -30,7 +30,7 @@
 }
 
 .beer-info__img {
-    width: 40%;
+    width: 60px;
     object-fit: contain;
     grid-row: 1 / -1;
 }

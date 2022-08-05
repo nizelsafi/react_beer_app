@@ -10,7 +10,6 @@ import {
   } from "react-router-dom";
 import BeerDetail from './pages/beerDetail';
 import initializeBeersData from './services/initializeBeersData';
-import HomePage from './pages/homePage';
 import BeerList from './pages/beerList';
 import Nav from './components/Nav';
 import Header from './components/Header';
@@ -55,8 +54,6 @@ function App({ beersData, orderBeers, setBeersData, setSearchedBeers, alert }) {
     <BrowserRouter>
       <div className="App">
         <Nav numOrderBeers={orderBeers.length} />
-        <Header />
-        <SearchBox handleInput={handleInput} searchTerm={searchTerm}/>
         <Switch> 
           <Route path="/beerList/:id" >
               <div className='home'>
@@ -64,15 +61,20 @@ function App({ beersData, orderBeers, setBeersData, setSearchedBeers, alert }) {
               </div>
           </Route>
           <Route path="/beerList" >
+              <Header />
+              <SearchBox handleInput={handleInput} searchTerm={searchTerm}/>
               {beersData && <BeerList />}
               <Pagination
                 onPageChange={handlePageClick}
               />
           </Route>
           <Route path="/shopList" >
+              <Header />
               {orderBeers && <ShopList />}
           </Route>
           <Route path="/" >
+              <Header />
+              <SearchBox handleInput={handleInput} searchTerm={searchTerm}/>
               <div className='home'>
                 {beersData && <BeerCart />}
                 <Pagination
