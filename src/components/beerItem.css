@@ -1,8 +1,26 @@
-.listItem.MuiImageListItem-root {
-    background-color: aliceblue;
-}
-
 img.imgItem.MuiImageListItem-img {
     object-fit: contain;
     height: 250px;
+}
+
+.cardItem.MuiPaper-root.MuiCard-root {
+    background-color: lightgoldenrodyellow;
+}
+
+.imgItemBar.MuiImageListItemBar-root.MuiImageListItemBar-positionBottom {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+button.MuiTypography-root.MuiTypography-inherit.MuiLink-root.MuiLink-underlineAlways.MuiLink-button.css-nf6ap-MuiTypography-root-MuiLink-root {
+    color: darkgoldenrod;
+    text-decoration-color: darkgoldenrod;
+    text-decoration: initial;
+}
+
+.MuiButton-root.primary_button {
+    color: darkgoldenrod;
+}
+
+.MuiButton-root.secondary_button {
+    color: orangered;
 }
