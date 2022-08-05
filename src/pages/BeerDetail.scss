@@ -1,0 +1,88 @@
+@use "/src/scss/mixins" as *;
+@use "/src/scss/variables" as *;
+
+
+.beer-page {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    a, a:visited {
+        color: #FFD369;
+        font-weight: bold;
+    }
+}
+
+.beer-info {
+    margin: 10vh auto;
+    width: 50%;
+    background-color: white;
+    border: 1px solid #9ca8bd;
+    border-radius: 20px;
+    padding: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+
+    /* @include mobile {
+        width: 90%;
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    @include tablet {
+        width: 90%;
+        grid-template-columns: 1fr;
+    } */
+
+    &__img {
+        width: 40%;
+        object-fit: contain;
+        grid-row: 1 / -1;
+
+       /*  @include mobile {
+            width: 20%;
+        }
+    
+        @include tablet {
+            width: 20%;
+        } */
+    }
+
+    &__column {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+       /*  @include mobile {
+            justify-items: center;
+            text-align: center;
+        }
+    
+        @include tablet {
+            justify-items: center;
+            text-align: center;
+        } */
+    }
+
+    &__table {
+        border-collapse: collapse;
+
+        td {
+            text-align: center;
+            padding: 10px;
+        }
+    }
+
+    &__title {
+        color: #FFD369;
+    }
+
+    &__description {
+        background-color: #ffd26942;
+        padding: 20px;
+        border-radius: 20px;
+    }
+}

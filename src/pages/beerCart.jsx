@@ -1,30 +1,49 @@
-import ImageList from '@mui/material/ImageList';
+import { Avatar, Divider, List, ListItem, ListItemAvatar, ListItemButton, ListItemText } from '@mui/material';
 import React, { useState, useEffect } from 'react';
-import BeerItem from '../components/beerItem';
-import ImageListItem from '@mui/material/ImageListItem';
-import ListSubheader from '@mui/material/ListSubheader';
-import getBeersData from '../api/getBeersData';
+import { connect } from 'react-redux';
+import { selectBeer } from '../store/actions';
+import Link from '@mui/material/Link';
 
-const BeerCart = () => {
-    const [beersData, setBeersData] = useState(null);
+const BeerCart = ({ beersData, searchedBeers, handleSelectBeer }) => {
+    const filtredData = searchedBeers.length > 0 ? searchedBeers : beersData;
 
-    useEffect(() => {            
-        getBeersData().then(data => {
-            console.log(data);
-            setBeersData(data);
-        });              
-    }, [])
+    if (filtredData.length === 0) {
+        return null;
+    }
 
-    return ( beersData && 
-    <ImageList sx={{ width: 500 }}>
-        <ImageListItem key="Subheader" cols={2}>
-            <ListSubheader component="div">BeerCart</ListSubheader>
-        </ImageListItem>
-        {beersData.map((beer) => (
-            <BeerItem key ={beer.id} beerInfos={beer} />
-        ))}
-    </ImageList>    
+    return ( 
+        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+            {filtredData.map((beer) => (
+                <Link href={`/beerList/${beer.id}`} key ={beer.id}>
+                    <ListItem alignItems="flex-start" key ={beer.id}>
+                        <ListItemButton onClick={() => handleSelectBeer(beer)}>
+                            <ListItemAvatar>
+                                <Avatar alt="Remy Sharp" src={beer.image_url} />
+                            </ListItemAvatar>
+                            <ListItemText
+                                primary={beer.name}
+                            />
+                        </ListItemButton>
+                    </ListItem>
+                </Link>
+            )) }
+            
+        </List> 
+          
     );
 };
 
-export default BeerCart;
+const mapStateToProps = state => {
+    return {
+        beersData: state.beersData,
+        searchedBeers: state.searchedBeers
+    };
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+      handleSelectBeer: (beer) => dispatch(selectBeer(beer))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(BeerCart);
