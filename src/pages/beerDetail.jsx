@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './BeerDetail.scss';
+import './BeerDetail.css';
 import { connect } from 'react-redux';
 import { useParams } from 'react-router-dom';
 
