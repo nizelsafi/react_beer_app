@@ -3,7 +3,7 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import './beerItem.css';
 import { connect } from 'react-redux';
-import { orderBeer, selectBeer, setAlert } from '../store/actions';
+import { orderBeer, setAlert } from '../store/actions';
 import { Link } from "react-router-dom";
 import { Button, Card, CardActions, CardContent } from '@mui/material';
 

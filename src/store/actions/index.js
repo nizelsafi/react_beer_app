@@ -7,13 +7,6 @@ export const setBeersData = (beersData) => {
     };
 };
 
-export const selectBeer = (beer) => { 
-    return {  
-        type: 'SELECTED_BEER',
-        payload: beer
-    };
-};
-
 export const setSearchedBeers = (searchedBeers) => { 
     console.log("setSearchedBeers: " + searchedBeers);
 

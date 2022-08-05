@@ -1,7 +1,6 @@
 import { Avatar, Divider, List, ListItem, ListItemAvatar, ListItemButton, ListItemText } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { selectBeer } from '../store/actions';
 import { Link } from "react-router-dom";
 
 
@@ -41,10 +40,4 @@ const mapStateToProps = state => {
     };
 };
 
-const mapDispatchToProps = dispatch => {
-    return {
-      handleSelectBeer: (beer) => dispatch(selectBeer(beer))
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ShopList);
+export default connect(mapStateToProps)(ShopList);

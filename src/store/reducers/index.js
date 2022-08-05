@@ -7,13 +7,6 @@ const setBeersDataReducer = (beersData = [], action) => {
     return beersData;
 }; 
 
-const selectedBeerReducer = (selectedBeer = null, action) => {
-    if(action.type === 'SELECTED_BEER') {
-        return action.payload;
-    }
-    return selectedBeer;
-}; 
-
 const setSearchedBeersReducer = (searchedBeers = [], action) => {
     if(action.type === 'SET_SEARCHED_BEERS') {
         return action.payload;
@@ -37,7 +30,6 @@ const setAlertReducer = (alert = null, action) => {
 
 export default combineReducers({ 
     beersData: setBeersDataReducer,
-    selectedBeer: selectedBeerReducer,
     searchedBeers: setSearchedBeersReducer,
     orderBeers: orderBeerReducer,
     alert: setAlertReducer
