@@ -1,5 +1,5 @@
 .searchBox {
-    background-color: #FFD369;
+    background-color: #ffd369;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,13 +8,14 @@
 }
 
 .searchBox input {
-    background-color: #EEEEEE;
+    background-color: #eeeeee;
     border: 1px solid #e0ad34;
     border-radius: 10px;
     width: 65%;
     padding: 15px;
 }
 
-.searchBox input:active, .searchBox input:focus {
+.searchBox input:active,
+.searchBox input:focus {
     outline: none;
 }

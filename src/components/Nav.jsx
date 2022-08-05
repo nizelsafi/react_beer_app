@@ -1,6 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import './Nav.css'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Nav.css';
 import LocalGroceryStoreOutlinedIcon from '@mui/icons-material/LocalGroceryStoreOutlined';
 import Badge from '@mui/material/Badge';
 
@@ -13,16 +13,17 @@ const Nav = ({ numOrderBeers }) => {
             <Link to="/beerList">
                 <h3>BeerList</h3>
             </Link>
-            <Link to="/shopList" className='icon'>
-                { numOrderBeers > 0 ? 
-                    <Badge badgeContent={numOrderBeers} className={"badge"} >
+            <Link to="/shopList" className="icon">
+                {numOrderBeers > 0 ? (
+                    <Badge badgeContent={numOrderBeers} className={'badge'}>
                         <LocalGroceryStoreOutlinedIcon />
-                    </Badge> :
+                    </Badge>
+                ) : (
                     <LocalGroceryStoreOutlinedIcon />
-                }
+                )}
             </Link>
         </div>
-    )
-}
+    );
+};
 
-export default Nav
+export default Nav;

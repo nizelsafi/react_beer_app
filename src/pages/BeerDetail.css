@@ -4,13 +4,14 @@
     align-items: center;
 }
 
-.beer-page a, .beer-page a:visited {
-    color: #FFD369;
+.beer-page a,
+.beer-page a:visited {
+    color: #ffd369;
     font-weight: bold;
 }
 
 .itemBar--top {
-    background-color: #FFD369;
+    background-color: #ffd369;
     height: 25px;
     color: white;
 }
@@ -51,7 +52,7 @@
 }
 
 .beer-info__title {
-    color: #FFD369;
+    color: #ffd369;
 }
 
 .beer-info__description {

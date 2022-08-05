@@ -1,40 +1,47 @@
-import { Avatar, List, ListItem, ListItemAvatar, ListItemButton, ListItemText } from '@mui/material';
+import {
+    Avatar,
+    List,
+    ListItem,
+    ListItemAvatar,
+    ListItemButton,
+    ListItemText
+} from '@mui/material';
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from "react-router-dom";
-
+import { Link } from 'react-router-dom';
 
 const ShopList = ({ orderBeers, searchedBeers }) => {
-    const matchedBeers = searchedBeers && orderBeers && searchedBeers.filter(obj => {
-        return orderBeers.indexOf(obj) !== -1;
-    });
-    const beersData = matchedBeers ? matchedBeers : orderBeers ;
+    const matchedBeers =
+        searchedBeers &&
+        orderBeers &&
+        searchedBeers.filter((obj) => {
+            return orderBeers.indexOf(obj) !== -1;
+        });
+    const beersData = matchedBeers ? matchedBeers : orderBeers;
 
     if (beersData.length === 0) {
         return <div>No ordered beers...</div>;
     }
 
-    return ( 
+    return (
         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
             {beersData.map((beer) => (
-                <Link to={`/beerList/${beer.id}`} key ={beer.id} className={"link"} >
-                    <ListItem alignItems="flex-start" key ={beer.id}>
+                <Link to={`/beerList/${beer.id}`} key={beer.id} className={'link'}>
+                    <ListItem alignItems="flex-start" key={beer.id}>
                         <ListItemButton>
                             <ListItemAvatar>
                                 <Avatar alt="Remy Sharp" src={beer.image_url} />
                             </ListItemAvatar>
-                            <ListItemText
-                                primary={beer.name}
-                            />
+                            <ListItemText primary={beer.name} />
                         </ListItemButton>
                     </ListItem>
                 </Link>
-            )) }
-        </List> 
+            ))}
+        </List>
     );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
     return {
         searchedBeers: state.searchedBeers,
         orderBeers: state.orderBeers

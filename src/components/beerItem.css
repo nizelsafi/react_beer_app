@@ -11,12 +11,6 @@ img.imgItem.MuiImageListItem-img {
     background: rgba(0, 0, 0, 0.3);
 }
 
-button.MuiTypography-root.MuiTypography-inherit.MuiLink-root.MuiLink-underlineAlways.MuiLink-button.css-nf6ap-MuiTypography-root-MuiLink-root {
-    color: darkgoldenrod;
-    text-decoration-color: darkgoldenrod;
-    text-decoration: initial;
-}
-
 .MuiButton-root.primary_button {
     color: darkgoldenrod;
 }
@@ -26,7 +20,6 @@ button.MuiTypography-root.MuiTypography-inherit.MuiLink-root.MuiLink-underlineAl
 }
 
 .imgItemBar--top.MuiImageListItemBar-root {
-    background-color: #FFD369;
+    background-color: #ffd369;
     height: 25px;
-    /*transform: rotate(50deg);*/
 }
