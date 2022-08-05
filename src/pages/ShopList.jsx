@@ -17,7 +17,7 @@ const ShopList = ({ orderBeers, searchedBeers }) => {
         searchedBeers.filter((obj) => {
             return orderBeers.indexOf(obj) !== -1;
         });
-    const beersData = matchedBeers ? matchedBeers : orderBeers;
+    const beersData = matchedBeers.length > 0 ? matchedBeers : orderBeers;
 
     if (beersData.length === 0) {
         return <div>No ordered beers...</div>;
