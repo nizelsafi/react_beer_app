@@ -1,13 +1,12 @@
 import axios from "axios";
 
-const getBeersData = async () => {
-
-    const url = `https://api.punkapi.com/v2/beers`;
+const getBeersData = async (page = 1) => {
+    const url = `https://api.punkapi.com/v2/beers?page=${page}`;
     let beersData;
 
     try {
         const res = await axios.get(url);
-        console.log(res.data);
+        
         beersData = res.data;
     } catch (err) {
         console.error(err);
