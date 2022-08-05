@@ -18,24 +18,27 @@ const ShopList = ({ orderBeers, searchedBeers }) => {
     const beersData = matchedBeers.length > 0 ? matchedBeers : orderBeers;
 
     if (beersData.length === 0) {
-        return <div>No ordered beers...</div>;
+        return <div className="empty">No ordered beers...</div>;
     }
 
     return (
-        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-            {beersData.map((beer) => (
-                <Link to={`/beerList/${beer.id}`} key={beer.id} className={'link'}>
-                    <ListItem alignItems="flex-start" key={beer.id}>
-                        <ListItemButton>
-                            <ListItemAvatar>
-                                <Avatar alt="Remy Sharp" src={beer.image_url} />
-                            </ListItemAvatar>
-                            <ListItemText primary={beer.name} />
-                        </ListItemButton>
-                    </ListItem>
-                </Link>
-            ))}
-        </List>
+        <>
+            <h3>Shop List</h3>
+            <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+                {beersData.map((beer) => (
+                    <Link to={`/beerList/${beer.id}`} key={beer.id} className={'link'}>
+                        <ListItem alignItems="flex-start" key={beer.id}>
+                            <ListItemButton>
+                                <ListItemAvatar>
+                                    <Avatar alt="Remy Sharp" src={beer.image_url} />
+                                </ListItemAvatar>
+                                <ListItemText primary={beer.name} />
+                            </ListItemButton>
+                        </ListItem>
+                    </Link>
+                ))}
+            </List>
+        </>
     );
 };
 
