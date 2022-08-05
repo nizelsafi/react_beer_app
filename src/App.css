@@ -2,13 +2,7 @@
   text-align: center;
 }
 
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.home {
-  display: inline-flex;
+.link {
+  color: rgb(0, 0, 0);
+  text-decoration: initial;
 }
