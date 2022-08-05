@@ -1,0 +1,25 @@
+@use "/src/scss/mixins" as *;
+@use "/src/scss/variables" as *;
+
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    background-color: #222831;
+    color: rgb(245, 245, 245);
+
+    a {
+        text-decoration: none;
+        color: white;
+        padding: 0 10px;
+
+        &:hover, &:visited {
+            color: white;
+        }
+    }
+
+    .icon {
+        margin-left: auto;
+    }
+}
